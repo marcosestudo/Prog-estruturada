@@ -1,11 +1,12 @@
 #include <stdio.h>
 
-int fibonnacci(int n)                            
-{                                         
-if (n == 1) return 1;                   
-  else                                    
-if (n == 2) return 1;                 
-  else return fibonnacci(n - 1) + fibonnacci(n - 2);  
+int fibonnacci(int n) {                                         
+  if (n == 1) 
+    return 1;                   
+  else if (n == 2) 
+    return 1;                 
+  else 
+    return fibonnacci(n - 1) + fibonnacci(n - 2);  
 } 
 
 int main(void) {
