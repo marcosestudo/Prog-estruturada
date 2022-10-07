@@ -5,7 +5,7 @@
 #define N 10
   
 int main (void) {
-  int i, index = 0, palindromo, palindromos[N];
+  int i, index = 0, palindromo = 1, palindromos[N];
   char strNum[40];
 
   printf("Insira um número inteiro ou insira -1 para sair: ");
