@@ -1,5 +1,3 @@
-
-
 #include <stdio.h>
 
 int mmc(int num1, int num2) {

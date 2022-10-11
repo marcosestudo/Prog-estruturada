@@ -4,6 +4,8 @@
 #include <time.h>
 #include <ctype.h>
 
+#define CONSTANTE 100
+
 int multiplicacao (x, y) {
   if (y == 0) {
     return 0;
@@ -61,6 +63,49 @@ int fibonnacciIterativo(int n) {
   }  
 }
 
+int mdcRecursivo(int x, int y)
+{
+    if(y == 0) 
+      return x;
+    else
+      return mdcRecursivo(y, x%y);
+}
+
+int mdcIterativo(int x, int y) {
+    int resto;
+
+    do {
+        resto = x % y;
+        x = y;
+        y = resto;
+    } while (resto != 0);
+
+    return x;
+}
+
+
+int mmcRecursivo(int x, int y) {
+    int div;
+    if (y == 0) 
+      return x;
+    else
+      div = (x * y) / (mdcRecursivo(x, y));
+    return (div); 
+} 
+
+int mmcIterativo(int x, int y) {
+    int mmc, aux, i;
+
+    for (i = 2; i <= y; i++) {
+        aux = x * i;
+        if ((aux % y) == 0) {
+            mmc = aux;
+            i = y + 1;
+        }
+    }
+    return mmc;
+}
+
 void intToStr(void){
   // testando funcao sprintf
   char str [50];
@@ -93,3 +138,48 @@ void doWhile(void) {
     scanf("%f", &num);    
   } while (num > 0);  
 }
+
+void populaLista(int lista[N]) {
+  int i;
+  
+  srand(time(NULL));
+  
+  for(i = 0; i < N; i ++) {
+    lista[i] = rand() %10 + 1;
+  }
+}
+
+void mostraLista(int lista[N]) {
+  int i;
+  for (i = 0; i < N; i ++) {
+    printf("%d ", lista[i]);
+  }
+  printf("\n");
+}
+
+void ordenaLista(int lista[N]) {
+  int i, k, aux;
+
+  for (k = 0; k < N; k ++) {
+    for(i = 0; i < N - 1; i ++) {
+      if(lista[i] > lista[i + 1]) {
+        aux = lista[i];
+        lista[i] = lista[i + 1];
+        lista[i + 1] = aux;
+      }
+    }
+  }
+}
+
+void inverteLista(int lista[N]) {
+  int i, aux[N];
+
+  for(i = N - 1; i >= 0; i --) {
+    aux[i] = lista[N - i - 1];
+  }
+
+  for(i = 0; i < N; i ++) {
+    lista[i] = aux[i]; 
+  }
+}
+
