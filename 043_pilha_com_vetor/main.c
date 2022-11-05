@@ -28,7 +28,7 @@ int pop (pilha *P) {
   return aux;
 }
 
-void print (pilha P) {
+void show (pilha P) {
   int i;
   if (P.topo > -1) {
     for (i = 0; i <= P.topo; i ++) {
@@ -51,13 +51,13 @@ int main (void) {
   push(&P, 19);
   push(&P, 43);
 
-  print(P);
+  show(P);
   printf("\n");
   
   printf("%d\n", pop(&P));
   printf("%d\n", pop(&P));
   
-  print(P);
+  show(P);
   
   return 0;
 }
