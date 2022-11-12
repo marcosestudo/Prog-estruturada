@@ -1,15 +1,14 @@
-
 lista *insereElem(lista *L, int elem) {
-  lista *pre, *no;
+  lista *pre, *el;
   if (!buscaElem(L, elem, &pre)) {
-    no = (lista *)malloc(sizeof(lista));
-    no->info = elem;
+    el = (lista *)malloc(sizeof(lista));
+    el->info = elem;
     if (L == NULL || pre == NULL) { 
-      no->prox = L;
-      L = no;
+      el->prox = L;
+      L = el;
     } else {
-      no->prox = pre->prox;
-      pre->prox = no;
+      el->prox = pre->prox;
+      pre->prox = el;
     }
   }
   return L;
