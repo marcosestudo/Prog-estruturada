@@ -20,3 +20,24 @@ int main(void) {
 
 	return 0;
 }
+
+// trexos comentados pertencem a implementacao sem no cabeca
+int busca(lista *L, int elem, lista **pre) {
+	lista *aux, *preL;
+
+	// aux = L;
+	// preL = NULL;
+	aux = L->prox;
+	preL = L;
+
+	while (aux != NULL && elem > aux->info) {
+		preL = aux;
+		aux = aux->prox;
+	}
+	(*pre) = preL;
+
+	if (aux != NULL && aux->info == elem) {
+		return 1;
+	}
+	return 0;
+}
