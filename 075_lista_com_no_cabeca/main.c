@@ -41,3 +41,22 @@ int busca(lista *L, int elem, lista **pre) {
 	}
 	return 0;
 }
+
+void imprime(lista *L) {
+	// if (L != NULL) {
+	//     printf("|%d|| ", L->info);
+	//     if (L->prox != NULL) {
+	//         imprime(L->prox);
+	//     }
+	// }
+
+	if (L->prox != NULL) {
+		printf("|%d|| ", L->prox->info);
+		if (L->prox->prox != NULL) {
+			imprime(L->prox);
+		}
+	} else {
+        printf("Lista vazia");
+    }
+    
+}
