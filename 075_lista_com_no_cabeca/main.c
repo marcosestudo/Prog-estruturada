@@ -7,6 +7,11 @@ struct NO {
 };
 typedef struct NO lista;
 
+int busca(lista *L, int elem, lista **pre);
+void imprime(lista *L);
+lista *insereElem(lista *L, int elem);
+lista *removeElem(lista *L, int elem);
+
 int main(void) {
 	lista *L;
 
