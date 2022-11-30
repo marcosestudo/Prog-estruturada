@@ -78,3 +78,20 @@ lista *insereElem(lista *L, int elem) {
 
 	return L;
 }
+
+lista *removeElem(lista *L, int elem) {
+	lista *lixo, *pre;
+
+	if (busca(L, elem, &pre)) {
+		// if (L->info == elem) {
+		//     lixo = L;
+		//     L = lixo->prox;
+		// } else {
+		lixo = pre->prox;
+		pre->prox = lixo->prox;
+		// }
+		free(lixo);
+	}
+
+	return L;
+}
