@@ -51,3 +51,13 @@ void imprime(lista *L) {
         aux = aux->prox;
 	}
 }
+
+void removeElem(lista *L, int elem) {
+	lista *lixo, *pre;
+
+	if (busca(L, elem, &pre)) {
+        lixo = pre->prox;
+        pre->prox = lixo->prox;
+        free(lixo);
+    }
+}
