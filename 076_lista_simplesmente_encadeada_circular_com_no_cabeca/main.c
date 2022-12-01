@@ -20,3 +20,22 @@ int main(void) {
 
 	return 0;
 }
+
+int busca(lista *L, int elem, lista **pre) {
+	lista *aux, *preL;
+
+	aux = L->prox;
+	preL = L;
+
+	while (aux != L && elem > aux->info) {
+		preL = aux;
+		aux = aux->prox;
+	} 
+
+	(*pre) = preL;
+
+	if (aux != L && aux->info == elem) {
+		return 1;
+	}
+	return 0;
+}
