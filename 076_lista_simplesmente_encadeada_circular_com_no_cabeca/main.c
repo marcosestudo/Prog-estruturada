@@ -18,6 +18,40 @@ int main(void) {
 	L = (lista *)malloc(sizeof(lista));
 	L->prox = L;
 
+	insereElem(L, 10);
+	printf("\n");
+	imprime(L, L);
+	insereElem(L, 30);
+	printf("\n");
+	imprime(L, L);
+	insereElem(L, 20);
+	printf("\n");
+	imprime(L, L);
+	insereElem(L, 50);
+	printf("\n");
+	imprime(L, L);
+	insereElem(L, 40);
+	printf("\n");
+	imprime(L, L);
+	removeElem(L, 40);
+	printf("\n");
+	imprime(L, L);
+	removeElem(L, 30);
+	printf("\n");
+	imprime(L, L);
+	removeElem(L, 40);
+	printf("\n");
+	imprime(L, L);
+	removeElem(L, 10);
+	printf("\n");
+	imprime(L, L);
+	removeElem(L, 20);
+	printf("\n");
+	imprime(L, L);
+	removeElem(L, 50);
+	printf("\n");
+	imprime(L, L);
+
 	return 0;
 }
 

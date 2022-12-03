@@ -84,16 +84,16 @@ int main(void) {
 	printf("\n");
 	mostra(L);
 
-    printf("\nInserindo no fim");
-    insereNoFim1(&L, 100);
-    printf("\n");
-    mostra(L);
-    insereNoFim1(&L, 200);
-    printf("\n");
-    mostra(L);
-    insereNoFim1(&L, 300);    
-    printf("\n");
-    mostra(L);
+	printf("\nInserindo no fim");
+	insereNoFim1(&L, 100);
+	printf("\n");
+	mostra(L);
+	insereNoFim1(&L, 200);
+	printf("\n");
+	mostra(L);
+	insereNoFim1(&L, 300);    
+	printf("\n");
+	mostra(L);
     
 	printf("\nPopped: %d\n", removePrimeiro(&L));
 	mostra(L);
@@ -104,7 +104,7 @@ int main(void) {
 	printf("\nRemovido: %d\n", removeUltimo(&L));
 	mostra(L);
 	printf("\nPopped: %d\n", removePrimeiro(&L));
-    mostra(L);
+  mostra(L);
     
 	return 0;
 }
