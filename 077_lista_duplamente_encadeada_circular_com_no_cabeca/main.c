@@ -51,3 +51,12 @@ void imprimeCrescente(lista *L, lista *inicio) {
 		}
 	}
 }
+
+void imprimeDecrescente(lista *L, lista *inicio) {
+	if (L->ant != inicio) {
+		printf("||%d|| ", L->ant->info);
+		if (L->ant->ant != inicio) {
+			imprimeDecrescente(L->ant, inicio);
+		}
+	}
+}
