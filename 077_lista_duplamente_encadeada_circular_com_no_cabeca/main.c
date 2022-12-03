@@ -42,3 +42,12 @@ int busca(lista *L, int elem, lista **pre) {
 	}
 	return 0;
 }
+
+void imprimeCrescente(lista *L, lista *inicio) {
+	if (L->prox != inicio) {
+		printf("||%d|| ", L->prox->info);
+		if (L->prox->prox != inicio) {
+			imprimeCrescente(L->prox, inicio);
+		}
+	}
+}
