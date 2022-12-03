@@ -60,3 +60,16 @@ void imprimeDecrescente(lista *L, lista *inicio) {
 		}
 	}
 }
+
+void insereElem(lista *L, int elem) {
+	lista *pre, *el;
+
+	if (!busca(L, elem, &pre)) {
+		el = (lista *)malloc(sizeof(lista));
+		el->info = elem;
+		el->prox = pre->prox;
+		el->ant = pre;
+		pre->prox->ant = el;
+		pre->prox = el;
+	}
+}
