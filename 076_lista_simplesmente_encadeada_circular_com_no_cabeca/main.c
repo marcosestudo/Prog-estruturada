@@ -41,14 +41,20 @@ int busca(lista *L, int elem, lista **pre) {
 }
 
 
-void imprime(lista *L) {
-	lista *aux;
+void imprime(lista *L, lista *inicio) {
+	// lista *aux;
 
-	aux = L->prox;
+	// aux = L->prox;
 
-	while (aux != L) {
-		printf("|%d|| ", aux->info);
-        aux = aux->prox;
+	// while (aux != L) {
+	// 	printf("|%d|| ", aux->info);
+	// 	aux = aux->prox;
+	// }
+	if (L->prox != inicio) {
+		printf("|%d|| ", L->prox->info);
+		if (L->prox->prox != inicio) {
+			imprime(L->prox, inicio);
+		}
 	}
 }
 
